@@ -1,12 +1,9 @@
 package com.example.rechner;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class RechnerController {
     double ersteZahl = 0;
     private String operator = "";
     boolean neueEingabe = true;
