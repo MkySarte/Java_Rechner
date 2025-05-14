@@ -1,22 +1,27 @@
 package com.example.rechner;
 
+import com.example.rechner.StratOperatoren.*; //alles hier im package importieren
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class RechnerController {
+    private IOperatoren operatorenStrat;
     double ersteZahl = 0;
-    private String operator = ""; //er merkt sich welche von den operatoren gedrückt wurde
     boolean neueEingabe = true; // ob neue eingabe gemacht worden ist oder nicht
 
     //ausgabe
     @FXML
-    protected TextField ausgabe;
+    protected Label ausgabe;
 
     @FXML
     protected void reset() {
         ausgabe.setText("");          // Anzeige leeren
         ersteZahl = 0;                // erste Zahl zurücksetzen
-        operator = "";                // Operator leeren
         neueEingabe = true;           // Eingabe beginnt neu
         System.out.println("Taschenrechner wurde zurückgesetzt.");
     }
@@ -24,49 +29,57 @@ public class RechnerController {
     @FXML
     protected void plus() {
         ersteZahl = Double.parseDouble(ausgabe.getText());
-        operator = "+";
-        neueEingabe = true;
+        operatorenStrat = new Add();
+        neueEingabe = true; //--> user gibt neue Zahl ein
     }
 
     @FXML
     protected void minus() {
         ersteZahl = Double.parseDouble(ausgabe.getText());
-        operator = "-";
+        operatorenStrat = new Sub();
         neueEingabe = true;
     }
 
     @FXML
     protected void times() {
         ersteZahl = Double.parseDouble(ausgabe.getText());
-        operator = "*";
+        operatorenStrat = new Times();
         neueEingabe = true;
     }
 
     @FXML
     protected void devide() {
         ersteZahl = Double.parseDouble(ausgabe.getText());
-        operator = "/";
+        operatorenStrat = new Div();
         neueEingabe = true;
     }
 
     @FXML
     protected void percent() {
+        ersteZahl = Double.parseDouble(ausgabe.getText());
+        operatorenStrat = new Percent();
+        neueEingabe = true;
+    }
+    @FXML
+    public void equal() {
         try {
             double zweiteZahl = Double.parseDouble(ausgabe.getText());
-            if (!operator.isEmpty()) {
-                zweiteZahl = ersteZahl * (zweiteZahl / 100.0);
-                ausgabe.setText(String.valueOf(zweiteZahl));
-            } else {
-                zweiteZahl = zweiteZahl / 100.0;
-                ausgabe.setText(String.valueOf(zweiteZahl));
-            }
+            double ergebnis = operatorenStrat.calc(ersteZahl, zweiteZahl);
+
+            // Formatierung: Komma statt Punkt, keine ".0" wenn nicht nötig
+            DecimalFormatSymbols symb = new DecimalFormatSymbols(Locale.GERMAN); // für Komma
+            DecimalFormat df = new DecimalFormat("#.##", symb); // keine unnötigen Nachkommastellen
+            String formatiert = df.format(ergebnis);
+
+            ausgabe.setText(formatiert);
             neueEingabe = true;
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             ausgabe.setText("Fehler");
         }
     }
-
-
+/** @ReplaceOldCode
+ * :durch strategy-pattern weil es jetzt erweiterbar ist und ich es üben wollte
+ *
     @FXML
     public void equal() {
         double zweiteZahl = Double.parseDouble(ausgabe.getText());
@@ -97,7 +110,7 @@ public class RechnerController {
         ausgabe.setText(String.valueOf(ergebnis));
         neueEingabe = true;
     }
-
+ */
     //Ziffern
     @FXML
     protected void one() {

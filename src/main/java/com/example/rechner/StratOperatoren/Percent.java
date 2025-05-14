@@ -1,6 +1,6 @@
 package com.example.rechner.StratOperatoren;
 
-public class percent implements IOperatoren{
+public class Percent implements IOperatoren{
 
     @Override
     public double calc(double a, double b) {
