@@ -5,8 +5,8 @@ import javafx.scene.control.TextField;
 
 public class RechnerController {
     double ersteZahl = 0;
-    private String operator = "";
-    boolean neueEingabe = true;
+    private String operator = ""; //er merkt sich welche von den operatoren gedrückt wurde
+    boolean neueEingabe = true; // ob neue eingabe gemacht worden ist oder nicht
 
     //ausgabe
     @FXML
@@ -105,8 +105,8 @@ public class RechnerController {
             ausgabe.setText("");
             neueEingabe = false;
         }
-        // ausgabe.getText(); && text auslesen gettext + settext dazu
-        ausgabe.setText(ausgabe.getText() + "1");
+        // ausgabe.getText(); && text auslesen gettext + settext dazu 1 +1 +1 +1
+       ausgabe.setText(ausgabe.getText() + "1");
     }
 
     @FXML
@@ -162,7 +162,7 @@ public class RechnerController {
     @FXML
     protected void seven() {
         if (neueEingabe) {
-            ausgabe.setText("");
+            ausgabe.setText(""); //neue zahl
             neueEingabe = false;
         }
         // ausgabe.getText(); && text auslesen gettext + settext dazu

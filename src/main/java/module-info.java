@@ -5,4 +5,6 @@ module com.example.rechner {
 
     opens com.example.rechner to javafx.fxml;
     exports com.example.rechner;
+    exports com.example.rechner.StratOperatoren;
+    opens com.example.rechner.StratOperatoren to javafx.fxml;
 }
