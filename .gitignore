@@ -1,27 +1,41 @@
+######################################
+# 🔧 Maven-Standard-Verzeichnisse
+######################################
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
+######################################
+# ⚙ Maven Wrapper
+######################################
+!.mvn/wrapper/maven-wrapper.jar
+
+######################################
+# 🧠 IntelliJ IDEA (lokale Projektdateien)
+######################################
+.idea/
+*.iml
+*.iws
+*.ipr
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-*.iws
-*.iml
-*.ipr
 
-### Eclipse ###
+######################################
+# ☁ Eclipse
+######################################
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
-.sts4-cache
+.sts4-cache/
 
-### NetBeans ###
+######################################
+# ☀ NetBeans
+######################################
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -31,8 +45,42 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+######################################
+# 🧪 VS Code
+######################################
 .vscode/
 
-### Mac OS ###
+######################################
+# 🍏 macOS & Windows Systemdateien
+######################################
 .DS_Store
+Thumbs.db
+
+######################################
+# 🧱 Java generiert
+######################################
+*.class
+*.jar
+*.war
+*.ear
+
+######################################
+# 📝 Logs, Cache, Temp
+######################################
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+######################################
+# 🔐 Sicherheitsrelevantes (nicht öffentlich!)
+######################################
+.env
+*.env
+.env.*.local
+config.json
+*.db
+*.sqlite
+*.secret
