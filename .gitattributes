@@ -1,0 +1,6 @@
+# Git soll für Java- und FXML-Dateien Unix-Zeilenenden (LF) verwenden
+*.java text eol=lf
+*.fxml text eol=lf
+
+# Alle anderen Dateien automatisch behandeln (nach Betriebssystem)
+* text=auto
