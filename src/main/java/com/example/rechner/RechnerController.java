@@ -1,7 +1,9 @@
 package com.example.rechner;
 
+import com.example.rechner.ButtonGUI;
 import com.example.rechner.StratOperatoren.*; //alles hier im package importieren
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -19,6 +21,9 @@ public class RechnerController {
     protected Label ausgabe;
 
     @FXML
+    protected Button percentBtn, devideBtn, timesBtn, minusBtn, plusBtn;
+
+    @FXML
     protected void reset() {
         ausgabe.setText("");          // Anzeige leeren
         ersteZahl = 0;                // erste Zahl zurücksetzen
@@ -31,6 +36,10 @@ public class RechnerController {
         ersteZahl = Double.parseDouble(ausgabe.getText());
         operatorenStrat = new Add();
         neueEingabe = true; //--> user gibt neue Zahl ein
+
+        /**@see ButtonGUI
+         * */
+        ButtonGUI.onClickChangeColor(plusBtn, percentBtn, devideBtn, timesBtn, minusBtn);
     }
 
     @FXML
@@ -38,6 +47,8 @@ public class RechnerController {
         ersteZahl = Double.parseDouble(ausgabe.getText());
         operatorenStrat = new Sub();
         neueEingabe = true;
+
+        ButtonGUI.onClickChangeColor(minusBtn, plusBtn, percentBtn, devideBtn, timesBtn);
     }
 
     @FXML
@@ -45,6 +56,8 @@ public class RechnerController {
         ersteZahl = Double.parseDouble(ausgabe.getText());
         operatorenStrat = new Times();
         neueEingabe = true;
+
+        ButtonGUI.onClickChangeColor(timesBtn, minusBtn, plusBtn, percentBtn, devideBtn);
     }
 
     @FXML
@@ -52,6 +65,8 @@ public class RechnerController {
         ersteZahl = Double.parseDouble(ausgabe.getText());
         operatorenStrat = new Div();
         neueEingabe = true;
+
+        ButtonGUI.onClickChangeColor(devideBtn, timesBtn, minusBtn, plusBtn, percentBtn);
     }
 
     @FXML
@@ -59,6 +74,8 @@ public class RechnerController {
         ersteZahl = Double.parseDouble(ausgabe.getText());
         operatorenStrat = new Percent();
         neueEingabe = true;
+
+        ButtonGUI.onClickChangeColor(percentBtn, devideBtn, timesBtn, minusBtn, plusBtn);
     }
     @FXML
     public void equal() {
@@ -70,6 +87,8 @@ public class RechnerController {
             DecimalFormatSymbols symb = new DecimalFormatSymbols(Locale.GERMAN); // für Komma
             DecimalFormat df = new DecimalFormat("#.##", symb); // keine unnötigen Nachkommastellen
             String formatiert = df.format(ergebnis);
+
+            ButtonGUI.resetBtnColor(percentBtn, devideBtn, timesBtn, minusBtn, plusBtn);
 
             ausgabe.setText(formatiert);
             neueEingabe = true;

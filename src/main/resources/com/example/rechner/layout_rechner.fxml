@@ -14,12 +14,12 @@
          </font>
       </Button>
       <Button layoutX="124.0" layoutY="178.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: #808080;" textFill="WHITE" />
-      <Button fx:id="percent" layoutX="214.0" layoutY="178.0" mnemonicParsing="false" onAction="#percent" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: #808080;" text="\%" textFill="WHITE">
+      <Button fx:id="percentBtn" layoutX="214.0" layoutY="178.0" mnemonicParsing="false" onAction="#percent" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="\%" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="devide" layoutX="312.0" layoutY="178.0" mnemonicParsing="false" onAction="#devide" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="/" textFill="WHITE">
+      <Button fx:id="devideBtn" layoutX="312.0" layoutY="178.0" mnemonicParsing="false" onAction="#devide" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="/" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -39,7 +39,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="times" layoutX="312.0" layoutY="257.0" mnemonicParsing="false" onAction="#times" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="X" textFill="WHITE">
+      <Button fx:id="timesBtn" layoutX="312.0" layoutY="257.0" mnemonicParsing="false" onAction="#times" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="X" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -59,7 +59,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="minus" layoutX="312.0" layoutY="335.0" mnemonicParsing="false" onAction="#minus" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="-" textFill="WHITE">
+      <Button fx:id="minusBtn" layoutX="312.0" layoutY="335.0" mnemonicParsing="false" onAction="#minus" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="-" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -79,7 +79,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="plus" graphicTextGap="9.0" layoutX="310.0" layoutY="412.0" mnemonicParsing="false" onAction="#plus" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="+" textFill="WHITE">
+      <Button fx:id="plusBtn" graphicTextGap="9.0" layoutX="310.0" layoutY="412.0" mnemonicParsing="false" onAction="#plus" prefHeight="56.0" prefWidth="80.0" style="-fx-background-color: orange;" text="+" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

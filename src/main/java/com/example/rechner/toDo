@@ -1,7 +1,16 @@
 
-//fxml
-switch2otherColor
-knöpfe dunkeler
-ziffer sowie operatoren orange oder so
-ausgabe dunkel
-ziffer (weiß)
+ToDo:
+OperatorPräzedenz: operrator rangfolge
+
+wenn die klasse OperatorP erstellt ist könnte ich dann eigentlich auch
+über die zahl im Label noch eine kleinere Label inzufügen und diese dann anzeigen lassen was
+der user alles eingegeben hat
+
+eine datei erstellen -> code erklärung
+
+
+FixMe:
+bisher kann ich nur a, b eingeben bedeutet noch kann ich keine  a, b ,c rechnung machen
+
+Layout verbessern: abstande von Btns, Font
+
